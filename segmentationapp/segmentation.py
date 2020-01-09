@@ -96,7 +96,7 @@ def main():
                 out_path_im = dstFileDir + input_image_name + '_erfnet' + '.' + input_path_ext
 
                 cv.imwrite(out_path_im, prediction_rgb)  # color images for visualization
-                print allDir +' process end \n'
+                print allDir +' process end '
 
 	end = time.time()
 	print 'cost time ' + str((end-start)*1000) + 'ms'		
