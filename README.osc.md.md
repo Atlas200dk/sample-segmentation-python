@@ -223,6 +223,6 @@
     -   segmentation.py：主程序
     -   jpegHandler.py：jpeg图片处理，如resize、色域转换等
     -   models：存放模型网络
-    -   Result：存放标注后的图片
+    -   Result：存放推理后的图片
 
 
