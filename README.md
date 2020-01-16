@@ -17,7 +17,7 @@
 
 1.  <a name="li953280133816"></a>获取源码包。
 
-    将[https://gitee.com/Atlas200DK/sample-segmentation-python](https://gitee.com/Atlas200DK/sample-classification-python)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：/home/ascend/sample-segmentation-python。
+    将[https://gitee.com/Atlas200DK/sample-segmentation-python](https://gitee.com/Atlas200DK/sample-classification-python)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/sample-segmentation-python。
 
 2.  获取此应用中所需要的网络模型。
 
@@ -54,9 +54,9 @@
 
     3.  单击OK开始转换模型。
 
-        1.1.0.0和1.3.0.0版本模型转换成功后，后缀为.om的离线模型存放地址为**：$HOME/tools/che/model-zoo/my-model/xxx**。
+        1.1.0.0和1.3.0.0版本模型转换成功后，后缀为.om的离线模型存放地址为：**$HOME/tools/che/model-zoo/my-model/xxx**。
 
-        1.31.0.0及以上版本模型转换成功后，后缀为.om的离线模型存放地址为**：$HOME/modelzoo/xxx/device/xxx.om**。
+        1.31.0.0及以上版本模型转换成功后，后缀为.om的离线模型存放地址为：**$HOME/modelzoo/xxx/device/xxx.om**。
 
     4.  将转换好的模型文件（.om文件）上传到[步骤1](#li953280133816)中源码所在路径下的“sample-segmentation-python/segmentationapp/models”目录下。
 
@@ -65,7 +65,7 @@
 
 1.  应用代码拷贝到开发板。
 
-    以Mind Studio安装用户进入语义分割网络应用\(python\)代码所在根目录，如/home/ascend/sample-segmentation-python，执行以下命令将应用代码拷贝到开发板。
+    以Mind Studio安装用户进入语义分割网络应用\(python\)代码所在根目录，如：$HOME/sample-segmentation-python，执行以下命令将应用代码拷贝到开发板。
 
     **scp -r ../sample-segmentation-python/ HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI\_PROJECTS**
 
