@@ -21,7 +21,7 @@
 
 2.  获取此应用中所需要的网络模型。
 
-    参考[表 语义分割网络应用\(python\)使用模型](#table1119094515272)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，例如$HOME/ascend/models/sample-segmentation-python。
+    参考[表 语义分割网络应用\(python\)使用模型](#table1119094515272)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，例如：$HOME/ascend/models/sample-segmentation-python。
 
     **表 1**  语义分割网络应用\(python\)使用模型
 
