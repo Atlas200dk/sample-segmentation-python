@@ -193,19 +193,16 @@
 
 3.  执行结果查看。
 
-    执行结果保存在当前目录下的resent18Result目录下，可以用以下命令拷贝到Ubuntu服务器中查看推理结果图片。
+    执行结果保存在当前目录下的Result目录下，需要在Ubuntu服务器中用以下命令将结果拷贝到Ubuntu服务器中查看推理结果图片。
 
-    **scp -r ./Result  _username@host\_ip:_\~**
+    scp -r _username@host\_ip_:/home/_username_/HIAI\_PROJECTS/sample-segmentation-python/Result ~
 
-    -   username：Mindstudio的安装用户，如mindstudio。
-    -   host\_ip：Ubuntu服务器中设置的虚拟网卡静态IP，可以在Ubuntu服务器中通过ifconfig查看，如[图 host\_ip查看](#fig16957172011614)所示。
-
-        **图 7**  host\_ip查看<a name="fig16957172011614"></a>  
-        ![](figures/host_ip查看.png "host_ip查看")
+    -   username：开发板用户﻿名，默认为HwHiAiUser。
+    -   host\_ip：开发板ip，USB连接一般为192.168.1.2.网线连接时一般为192.168.0.2
 
     **命令示例：**
 
-    **scp -r ./Result mindstudio@192.168.1.188:\~**
+    scp -r HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI\\_PROJECTS/sample-segmentation-python/Result ~
 
     该命令会把推理结果拷贝到Mindstudio安装用户的家目录中，可以直接查看。
 
