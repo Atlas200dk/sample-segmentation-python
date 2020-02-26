@@ -15,13 +15,7 @@ def putText(srcFile, dstFile, text) :
 
 def is_img(ext):
     ext = os.path.splitext(ext.lower())[1]
-    if ext == '.jpg':
-        return True
-    elif ext == '.png':
-        return True
-    elif ext == '.jpeg':
-        return True
-    elif ext == '.bmp':
+    if (ext == '.jpg') or (ext == '.png') or (ext == '.jpeg') or (ext == '.bmp'):
         return True
     else:
         return False
@@ -58,11 +52,7 @@ def mkdirown(path):
     if os.path.exists(path) == False:
         os.makedirs(path)
 
-def jpeg2yuv(src_name,resize_w, resize_h):
-    src_root_path =  '../jpg'   #'./data/jpg'
-    nv12_root_path = '../nv12'  #'./data/nv12'
-    bgr_dest_path =  '../bgr'  #'./data/bgr'
-    
+def jpeg2yuv(src_name,resize_w, resize_h):    
     image_ori = cv.imread(src_name)         
     image_ori = cv.resize(image_ori,(resize_w, resize_h))   
     yuv = rgb2nv12(image_ori)

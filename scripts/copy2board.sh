@@ -1,0 +1,1 @@
+scp -r ../../sample-segmentation-python/ HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI_PROJECTS
