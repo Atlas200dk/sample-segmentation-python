@@ -60,7 +60,9 @@ def main():
 		if( not jpegHandler.is_img(child) ):
 			print('[info] file : ' + child + ' is not image !')
 			continue 
-            
+        
+		print('[info] file : ' + child + ' begin process !')    
+
 		# read the jpeg file and resize it to required w&h, than change it to YUV format.	
 		input_image = jpegHandler.jpeg2yuv(child, InWidth, InHeight)
 
@@ -69,28 +71,27 @@ def main():
 
 		resultList = GraphInference(myGraph,nntensorList)
 		if resultList is None :
-			print("graph inference failed")
+			print(child + "graph inference failed")
 			continue
 		resultArray = resultList[0]
-		print InWidth, InHeight
 		resultArray = resultArray.reshape(19,InWidth,InHeight)
-       
-        prediction = resultArray.argmax(axis=0)      
-        
-        #print prediction
-        prediction = np.squeeze(prediction)
-        prediction = np.resize(prediction, (3,InHeight,InWidth))
-        prediction = prediction.transpose(1, 2, 0).astype(np.uint8)
-
-        prediction_rgb = np.zeros(prediction.shape, dtype=np.uint8)
-        cv.LUT(prediction, label_colours_bgr, prediction_rgb)
-
-        input_path_ext = child.split(".")[-1]
-        input_image_name = child.split("/")[-1:][0].replace('.' + input_path_ext, '')
-        out_path_im = dstFileDir + input_image_name + '_erfnet' + '.' + input_path_ext
-
-        cv.imwrite(out_path_im, prediction_rgb)  # color images for visualization
-        print(allDir +' process end ')
+		
+		prediction = resultArray.argmax(axis=0)      
+		
+		#print prediction
+		prediction = np.squeeze(prediction)
+		prediction = np.resize(prediction, (3,InHeight,InWidth))
+		prediction = prediction.transpose(1, 2, 0).astype(np.uint8)
+		
+		prediction_rgb = np.zeros(prediction.shape, dtype=np.uint8)
+		cv.LUT(prediction, label_colours_bgr, prediction_rgb)
+		
+		input_path_ext = child.split(".")[-1]
+		input_image_name = child.split("/")[-1:][0].replace('.' + input_path_ext, '')
+		out_path_im = dstFileDir + input_image_name + '_erfnet' + '.' + input_path_ext
+		
+		cv.imwrite(out_path_im, prediction_rgb)  # color images for visualization
+		print(input_image_name +' process end ')
 
 	end = time.time()
 	print('cost time ' + str((end-start)*1000) + 'ms')		
