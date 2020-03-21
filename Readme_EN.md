@@ -1,3 +1,5 @@
+English|[中文](Readme.md)
+
 # Semantic Segmentation Network Application \(Python\)<a name="EN-US_TOPIC_0228752400"></a>
 
 This application can run on the Atlas 200 DK to implement the inference function of the ERFNet network and output images with inference result.
