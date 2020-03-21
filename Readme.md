@@ -1,3 +1,5 @@
+中文|[English](Readme_EN.md)
+
 # 语义分割网络应用（Python）<a name="ZH-CN_TOPIC_0228752400"></a>
 
 本Application支持运行在Atlas 200 DK上，实现了erfnet网络的推理功能并输出带有推理结果的图片。
