@@ -23,9 +23,9 @@
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   该快速部署脚本可以快速部署多个案例，请选择sample-segmentation-python案例部署即可。  
-    >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式。转**[2. 常规部署](#li3208251440)**  
+    >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式。转: **[2. 常规部署](#li3208251440)**  
 
-2.  <a name="li3208251440"></a>常规部署，请参考：  [https://gitee.com/Atlas200DK/sample-READEME/tree/master/sample-segmentation-python](https://gitee.com/Atlas200DK/sample-READEME/tree/master/sample-segmentation-python)  。
+2.  <a name="li3208251440"></a>常规部署，请参考：  [https://gitee.com/Atlas200DK/sample-README/tree/master/sample-segmentation-python](https://gitee.com/Atlas200DK/sample-README/tree/master/sample-segmentation-python)  。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   该部署方式，需要手动完成代码下载、模型转换、环境变量配置等过程。完成后，会对其中的过程更加了解。  
@@ -56,11 +56,11 @@
 
 2.  配置开发板联网。
 
-    请参考[https://gitee.com/Atlas200DK/sample-READEME/tree/master/DK\_NetworkConnect](https://gitee.com/Atlas200DK/sample-READEME/tree/master/DK_NetworkConnect)  ，进行开发板网络连接配置。
+    请参考[https://gitee.com/Atlas200DK/sample-README/tree/master/DK\_NetworkConnect](https://gitee.com/Atlas200DK/sample-README/tree/master/DK_NetworkConnect)  ，进行开发板网络连接配置。
 
 3.  安装环境依赖。、
 
-    请参考[https://gitee.com/Atlas200DK/sample-READEME/tree/master/DK\_Environment](https://gitee.com/Atlas200DK/sample-READEME/tree/master/DK_Environment)  ，进行环境依赖配置。
+    请参考[https://gitee.com/Atlas200DK/sample-README/tree/master/DK\_Environment](https://gitee.com/Atlas200DK/sample-README/tree/master/DK_Environment)  ，进行环境依赖配置。
 
 
 ## 程序运行<a name="zh-cn_topic_0219036254_section6245151616426"></a>
