@@ -1,120 +1,120 @@
-中文|[English](Readme_EN.md)
+English|[中文](Readme_cn.md)
 
-# 语义分割网络应用（Python）<a name="ZH-CN_TOPIC_0228752400"></a>
+# Semantic Segmentation Network Application \(Python\)<a name="EN-US_TOPIC_0228752400"></a>
 
-本Application支持运行在Atlas 200 DK上，实现了erfnet网络的推理功能并输出带有推理结果的图片。
+This application can run on the Atlas 200 DK to implement the inference function of the ERFNet network and output images with inference result.
 
-当前分支中的应用适配**1.3.0.0**与**1.32.0.0及以上**版本的[DDK&RunTime](https://ascend.huawei.com/resources)。
+The current application adapts to  [DDK&RunTime](https://ascend.huawei.com/resources)  of 1.3.0.0 as well as 1.32.0.0 and later versions.
 
-## 前提条件<a name="zh-cn_topic_0219036254_section137245294533"></a>
+## Prerequisites<a name="en-us_topic_0219036254_section137245294533"></a>
 
-部署此Sample前，需要准备好以下环境：
+Before deploying this sample, ensure that:
 
--   已完成Mind Studio的安装。
+-   Mind Studio  has been installed.
 
--   已完成Atlas 200 DK开发者板与Mind Studio的连接，SD卡的制作、编译环境的配置等。
--   由于需要配置开发板联网，默认设置为USB连接，开发板地址为192.168.1.2
+-   The Atlas 200 DK developer board has been connected to  Mind Studio, the SD card has been created, and the compilation environment has been configured.
+-   The developer board is connected to the Internet over the USB port by default. The IP address of the developer board is  **192.168.1.2**.
 
-## 样例部署<a name="section412811285117"></a>
+## Sample Deployment<a name="section412811285117"></a>
 
-可以选择如下快速部署或者常规方法部署，二选一即可：
+You can use either of the following methods:
 
-1.  快速部署，请参考：  [https://gitee.com/Atlas200DK/faster-deploy](https://gitee.com/Atlas200DK/faster-deploy)  。
+1.  Quick deployment: visit  [https://github.com/Atlas200dk/faster-deploy](https://github.com/Atlas200dk/faster-deploy).
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   该快速部署脚本可以快速部署多个案例，请选择sample-segmentation-python案例部署即可。  
-    >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式。转: **[2. 常规部署](#li3208251440)**  
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   The quick deployment script can be used to quickly deploy multiple cases. Select  **sample-segmentation-python**.  
+    >-   The quick deployment script automatically completes code download, model conversion, and environment variable configuration. To learn about the detailed deployment process, go to  [2. Common deployment](#li3208251440).  
 
-2.  <a name="li3208251440"></a>常规部署，请参考：  [https://gitee.com/Atlas200DK/sample-README/tree/master/sample-segmentation-python](https://gitee.com/Atlas200DK/sample-README/tree/master/sample-segmentation-python)  。
+2.  <a name="li3208251440"></a>Common deployment: visit  [https://github.com/Atlas200dk/sample-README/tree/master/sample-segmentation-python](https://github.com/Atlas200dk/sample-README/tree/master/sample-segmentation-python).
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   该部署方式，需要手动完成代码下载、模型转换、环境变量配置等过程。完成后，会对其中的过程更加了解。  
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >-   In this deployment mode, you need to manually download code, convert models, and configure environment variables.  
 
 
-## 环境部署<a name="zh-cn_topic_0219036254_section1759513564117"></a>
+## Environment Deployment<a name="en-us_topic_0219036254_section1759513564117"></a>
 
-1.  应用代码拷贝到开发板。
+1.  Copy the application code to the developer board.
 
-    以Mind Studio安装用户进入语义分割网络应用\(python\)代码所在根目录，如：$HOME/sample-segmentation-python，执行以下命令将应用代码拷贝到开发板。
+    Go to the root directory of the semantic segmentation application \(python\) code as the  Mind Studio  installation user, for example,  **$HOME/sample-segmentation-python**, and run the following command to copy the application code to the developer board:
 
     **scp -r ../sample-segmentation-python/ HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI\_PROJECTS**
 
-    提示password时输入开发板密码，开发板默认密码为**Mind@123**，如[图 应用代码拷贝](#zh-cn_topic_0228757085_zh-cn_topic_0219036254_fig1660453512014)。
+    Type the password of the developer board as prompted. The default password is  **Mind@123**, as shown in  [Figure 1](#en-us_topic_0228757085_en-us_topic_0219036254_fig1660453512014).
 
-    **图 1** **应用代码拷贝**<a name="zh-cn_topic_0228757085_zh-cn_topic_0219036254_fig1660453512014"></a>  
+    **Figure  1**  Copying application code<a name="en-us_topic_0228757085_en-us_topic_0219036254_fig1660453512014"></a>  
     
 
-    ![](figures/zh-cn_image_0228836881.png)
+    ![](figures/en-us_image_0228836881.png)
 
-    在Mind Studio所在Ubuntu服务器中，以HwHiAiUser用户SSH登录到Host侧。
+    Log in to the host side as the  **HwHiAiUser**  user in SSH mode on Ubuntu Server where  Mind Studio  is located.
 
     **ssh HwHiAiUser@192.168.1.2**
 
-    切换到root用户，开发板中root用户默认密码为**Mind@123**。
+    Switch to the  **root**  user. The default password of the  **root**  user on the developer board is  **Mind@123**.
 
     **su root**
 
-2.  配置开发板联网。
+2.  Configure the network connection of the developer board.
 
-    请参考[https://gitee.com/Atlas200DK/sample-README/tree/master/DK\_NetworkConnect](https://gitee.com/Atlas200DK/sample-README/tree/master/DK_NetworkConnect)  ，进行开发板网络连接配置。
+    Configure the network connection of the developer board by referring to  [https://github.com/Atlas200dk/sample-README/tree/master/DK\_NetworkConnect](https://github.com/Atlas200dk/sample-README/tree/master/DK_NetworkConnect).
 
-3.  安装环境依赖。、
+3.  Install the environment dependency.
 
-    请参考[https://gitee.com/Atlas200DK/sample-README/tree/master/DK\_Environment](https://gitee.com/Atlas200DK/sample-README/tree/master/DK_Environment)  ，进行环境依赖配置。
+    Configure the environment dependency by referring to  [https://github.com/Atlas200dk/sample-README/tree/master/DK\_Environment](https://github.com/Atlas200dk/sample-README/tree/master/DK_Environment).
 
 
-## 程序运行<a name="zh-cn_topic_0219036254_section6245151616426"></a>
+## Application Running<a name="en-us_topic_0219036254_section6245151616426"></a>
 
-1.  切换HwHiAiUser用户，并进入语义分割网络应用代码所在目录。
+1.  Switch to the  **HwHiAiUser**  user and go to the directory where the semantic segmentation network application code is located.
 
     **su HwHiAiUser**
 
     **cd \~/HIAI\_PROJECTS/sample-segmentation-python/segmentationapp**
 
-2.  执行应用程序。
+2.  Run the application.
 
-    执行**segmentation.py**脚本会将推理结果在执行终端直接打印显示。
+    Run the  **segmentation.py**  script to print the inference result on the execution terminal.
 
-    命令示例如下所示：
+    Command example:
 
     **python segmentation.py**
 
-    执行成功后效果如[图 推理成功示意图](#zh-cn_topic_0228757085_fig1863053617417)所示。
+    [Figure 2](#en-us_topic_0228757085_fig1863053617417)  shows the inference result after the execution is successful.
 
-    **图 2**  推理成功示意图<a name="zh-cn_topic_0228757085_fig1863053617417"></a>  
+    **Figure  2**  Successful inference<a name="en-us_topic_0228757085_fig1863053617417"></a>  
     
 
-    ![](figures/zh-cn_image_0228757232.png)
+    ![](figures/en-us_image_0228757232.png)
 
-3.  执行结果查看。
+3.  Query the execution result.
 
-    执行结果保存在当前目录下的Result目录下，需要在Atlas200DK中用以下命令将结果拷贝到Ubuntu服务器中查看推理结果图片。
+    The execution result is stored in  **Result**  of the current directory. You need to run the following command on the Atlas 200 DK to copy the result to the Ubuntu server to view the inference result image:
 
     **scp -r username@host\_ip:/home/username/HIAI\_PROJECTS/sample-classification-python/Result \~**
 
-    -   username：开发板用户﻿名，默认为HwHiAiUser。
-    -   host\_ip：开发板ip，USB连接一般为192.168.1.2.网线连接时一般为192.168.0.2。
+    -   **username**: user name of the developer board. The default value is  **HwHiAiUser**.
+    -   **host\_ip**: IP address of the developer board. Generally, the IP address is  **192.168.1.2**  for USB connection and  **192.168.0.2**  for network cable connection.
 
-    **命令示例：**
+    **Command example:**
 
     **scp -r HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI\_PROJECTS/sample-classification-python/Result \~**
 
-    该命令会把推理结果拷贝到Mindstudio安装用户的家目录中，可以直接查看。
+    This command copies the inference result to the home directory of the Mind Studio installation user. You can view the inference result directly.
 
 
-## 相关说明<a name="zh-cn_topic_0219036254_section1092612277429"></a>
+## Remarks<a name="en-us_topic_0219036254_section1092612277429"></a>
 
--   **语义分割网络应用（Python）的流程说明如下**：
-    1.  从cityimage目录下读取jpeg图片。
-    2.  将读取的jpeg图片调用opencv resize到1024\*512，并转换成YUV420SP。
-    3.  将转换后的YUV420SP图片数据送入Matrix进行推理。demo采用的是erfnet网络，推理结果是每个像素点的19个分类的置信度
-    4.  后处理阶段，每个像素点选取最高置信度的分类，在图片上对同种分类进行涂色。涂色后图片存放在Result目录下。
+-   **The process of the semantic segmentation network application \(Python\) is as follows:**
+    1.  Read a JPEG image from the  **cityimage**  directory.
+    2.  Call OpenCV to resize the read JPEG image to 1024 x 512 and convert it to YUV420SP.
+    3.  Send the converted YUV420SP image data to Matrix for inference. The demo uses the ERFNet network, and the inference result includes the confidence values of 19 categories for each pixel.
+    4.  During post-processing, the category of the highest confidence value is used for each pixel, and pixels of the same category in the image are marked with the same color. A colored image is stored in the  **Result**  directory.
 
--   **语义分割网络应用（Python）的文件架构说明如下**：
-    -   cityimage：存放输入图片
-    -   segmentation.py：主程序
-    -   jpegHandler.py：jpeg图片处理，如resize、色域转换等
-    -   models：存放模型网络
-    -   Result：存放标注后的图片
+-   **The directory structure of the semantic segmentation application \(Python\) is described as follows:**
+    -   **cityimage**: directory of input images
+    -   **segmentation.py**: main program
+    -   **jpegHandler.py: jpeg**: JPEG image processing, such as resizing and color space conversion \(CSC\)
+    -   **models**: directory of model networks
+    -   **Result**: directory of labeled images
 
 
