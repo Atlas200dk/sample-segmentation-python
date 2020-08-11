@@ -28,6 +28,7 @@ You can use either of the following methods:
 2.  <a name="en-us_topic_0228752400_li3208251440"></a>Common deployment: visit  [https://github.com/Atlas200dk/sample-README/tree/master/sample-segmentation-python](https://github.com/Atlas200dk/sample-README/tree/master/sample-segmentation-python).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >
     >-   In this deployment mode, you need to manually download code, convert models, and configure environment variables.  
 
 
@@ -90,14 +91,14 @@ You can use either of the following methods:
 
     The execution result is stored in  **Result**  of the current directory. You need to run the following command on the Atlas 200 DK to copy the result to the Ubuntu server to view the inference result image:
 
-    **scp -r username@host\_ip:/home/username/HIAI\_PROJECTS/sample-classification-python/Result \~**
+    **scp -r username@host\_ip:/home/username/HIAI\_PROJECTS/sample-segmentation-python/Result \~**
 
     -   **username**: user name of the developer board. The default value is  **HwHiAiUser**.
     -   **host\_ip**: IP address of the developer board. Generally, the IP address is  **192.168.1.2**  for USB connection and  **192.168.0.2**  for network cable connection.
 
     **Command example:**
 
-    **scp -r HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI\_PROJECTS/sample-classification-python/Result \~**
+    **scp -r HwHiAiUser@192.168.1.2:/home/HwHiAiUser/HIAI\_PROJECTS/sample-segmentation-python/Result \~**
 
     This command copies the inference result to the home directory of the Mind Studio installation user. You can view the inference result directly.
 
